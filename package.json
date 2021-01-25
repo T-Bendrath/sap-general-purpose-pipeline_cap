@@ -1,0 +1,29 @@
+{
+  "name": "@sap/capire-bookshop",
+  "version": "1.0.0",
+  "description": "A simple bookshop application, build in a self-contained all-in-one fashion, i.e. w/o reusing other packages.",
+  "license": "SAP SAMPLE CODE LICENSE",
+  "dependencies": {
+    "@sap/cds": "^3",
+    "express": "^4",
+    "@sap/hana-client": "^2.4.182"
+  },
+  "devDependencies": {
+    "sqlite3": "^4.1.1"
+  },
+  "scripts": {
+    "start": "cds run",
+    "watch": "cds watch"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana",
+        "model": [
+          "db",
+          "srv"
+        ]
+      }
+    }
+  }
+}
