@@ -14,6 +14,7 @@
 general:
   inferBuildTool: true
   gitSshKeyCredentialsId: githubCredentialsId
+  verbose: true
 
 ### Step-specific configuration
 steps:
@@ -30,8 +31,8 @@ steps:
 
 ### Stage-specific configuration
 stages:
-  # Build:
-  #   buildTool: 'mta'
+  Build:
+    buildTool: 'mta'
 
   Confirm:
     manualConfirmation: false
@@ -41,7 +42,7 @@ stages:
 
   Release:
     cfTargets:
-      - credentialsId: 'myDeploymentCredentialsId'
+      - credentialsId: 'cfCredentialsId'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
         org: 'cf-dts-inner-source'
         space: 'dev'
