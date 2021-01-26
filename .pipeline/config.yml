@@ -20,29 +20,29 @@ steps:
   mavenExecute:
     dockerImage: devxci/mbtci:1.0.14
 
-  artifactPrepareVersion:
-    versioningType: cloud_noTag
-
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'cfCredentialsId'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: 'cf-dts-inner-source'
       space: 'dev'
-      appName: 'my-first-bookshop'
+      appName: 'my-first-app'
 
 ### Stage-specific configuration
 stages:
-  'Confirm':
+  # Build:
+  #   buildTool: 'mta'
+
+  Confirm:
     manualConfirmation: false
 
-  'Release':
-    cloudFoundryDeploy: true
+  # Release:
+  #   cloudFoundryDeploy: true
 
-#  Release:
-#    cfTargets:
-#      - org: 'cf-dts-inner-source'
-#        space: 'dev'
-#        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-#        appName: 'my-first-bookshop'
-#        credentialsId: 'myDeploymentCredentialsId'
+  Release:
+    cfTargets:
+      - credentialsId: 'myDeploymentCredentialsId'
+        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+        org: 'cf-dts-inner-source'
+        space: 'dev'
+        appName: 'my-first-app'
