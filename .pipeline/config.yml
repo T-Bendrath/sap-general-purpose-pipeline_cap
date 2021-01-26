@@ -13,6 +13,7 @@
 ### General project setup
 general:
   inferBuildTool: true
+  gitSshKeyCredentialsId: githubCredentialsId
 
 ### Step-specific configuration
 steps:
@@ -44,5 +45,4 @@ stages:
 #        space: 'dev'
 #        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
 #        appName: 'my-first-bookshop'
-#        manifest: 'manifest.yml'
 #        credentialsId: 'myDeploymentCredentialsId'
