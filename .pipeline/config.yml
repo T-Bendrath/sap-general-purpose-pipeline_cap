@@ -23,9 +23,9 @@ steps:
   mavenExecute:
     dockerImage: devxci/mbtci:1.0.14
 
-  artifactSetVersion:
-    gitPushMode: 'NONE'
-    commitVersion: false  
+  # artifactSetVersion:
+  #   gitPushMode: 'NONE'
+  #   commitVersion: false  
   mtaBuild:
     buildTarget: 'CF'
     mtaBuildTool: 'cloudMbt'
