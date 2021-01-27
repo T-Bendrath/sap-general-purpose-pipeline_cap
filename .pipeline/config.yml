@@ -12,8 +12,10 @@
 
 ### General project setup
 general:
-  inferBuildTool: true
+  # inferBuildTool: true
   gitSshKeyCredentialsId: githubCredentialsId
+  buildTool: 'mta'
+  productiveBranch: 'main'
   verbose: true
 
 ### Step-specific configuration
@@ -21,29 +23,36 @@ steps:
   mavenExecute:
     dockerImage: devxci/mbtci:1.0.14
 
+  artifactSetVersion:
+    gitPushMode: 'NONE'
+    commitVersion: false  
+  mtaBuild:
+    buildTarget: 'CF'
+    mtaBuildTool: 'cloudMbt'
+
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'cfCredentialsId'
-      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+      # apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: 'cf-dts-inner-source'
       space: 'dev'
-      appName: 'my-first-app'
+      # appName: 'my-first-app'
 
 ### Stage-specific configuration
-stages:
-  Build:
-    buildTool: 'mta'
+# stages:
+#   Build:
+#     buildTool: 'mta'
 
-  Confirm:
-    manualConfirmation: false
+#   Confirm:
+#     manualConfirmation: false
 
-  # Release:
-  #   cloudFoundryDeploy: true
+#   # Release:
+#   #   cloudFoundryDeploy: true
 
-  Release:
-    cfTargets:
-      - credentialsId: 'cfCredentialsId'
-        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        org: 'cf-dts-inner-source'
-        space: 'dev'
-        appName: 'my-first-app'
+#   Release:
+#     cfTargets:
+#       - credentialsId: 'cfCredentialsId'
+#         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+#         org: 'cf-dts-inner-source'
+#         space: 'dev'
+#         appName: 'my-first-app'
