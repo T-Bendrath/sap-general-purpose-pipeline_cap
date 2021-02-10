@@ -5,6 +5,15 @@ const { Books } = cds.entities
 module.exports = cds.service.impl(function() {
   this.after ('READ', 'Books', each => each.stock > 111 && _addDiscount2(each,11))
   this.before ('CREATE', 'Orders', _reduceStock)
+
+  // Reduce stock of ordered books if available stock suffices
+  this.on ('submitOrder', async req => {
+    const {book,amount} = req.data
+    const n = await UPDATE (Books, book)
+      .with ({ stock: {'-=': amount }})
+      .where ({ stock: {'>=': amount }})
+    n > 0 || req.error (409,`${amount} exceeds stock for book #${book}`)
+  })
 })
 
 /** Add some discount for overstocked books */

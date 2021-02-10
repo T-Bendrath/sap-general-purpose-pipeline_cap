@@ -9,6 +9,25 @@ module.exports = createPageObjects({
           })
         ).click();
       },
+      iEnterBookId: function (sBookId) {
+        element(
+          by.control({
+            id:
+              "CreateDialog::Books::ID-inner",
+            interaction: {
+              idSuffix: "inner",
+            },
+          })
+        ).sendKeys(sBookId);
+      },
+      iClickOnCreateInDialog: function () {
+        element(
+          by.control({
+            id:
+              "__button39",
+          })
+        ).click();
+      }
     },
 
     assertions: {

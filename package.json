@@ -12,17 +12,14 @@
     "sqlite3": "^4.1.1"
   },
   "scripts": {
-    "start": "cds run",
+    "genres": "cds serve test/genres.cds",
+    "start": "cds run --in-memory?",
     "watch": "cds watch"
   },
   "cds": {
     "requires": {
       "db": {
-        "kind": "hana",
-        "model": [
-          "db",
-          "srv"
-        ]
+        "kind": "sql"
       }
     }
   }

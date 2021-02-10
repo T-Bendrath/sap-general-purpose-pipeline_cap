@@ -119,7 +119,7 @@
     },
     "sap.ui": {
         "technology": "UI5",
-        "fullWidth": false
+        "fullWidth": true
     },
     "sap.fiori": {
         "registrationIds": [],

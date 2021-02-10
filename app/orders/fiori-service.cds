@@ -1,13 +1,14 @@
-using AdminService from '../../srv/admin-service';
+using OrdersService from '../../srv/orders-service';
 
-annotate AdminService.Books with {
+annotate OrdersService.Books with {
 	price @Common.FieldControl: #ReadOnly;
 }
+
 ////////////////////////////////////////////////////////////////////////////
 //
 //	Common
 //
-annotate AdminService.OrderItems with {
+annotate OrdersService.OrderItems with {
 	book @(
 		Common: {
 			Text: book.title,
@@ -21,7 +22,8 @@ annotate AdminService.OrderItems with {
 }
 
 
-annotate AdminService.Orders with @(
+@odata.draft.enabled
+annotate OrdersService.Orders with @(
 	UI: {
 		////////////////////////////////////////////////////////////////////////////
 		//
@@ -82,9 +84,9 @@ annotate AdminService.Orders with @(
 
 
 
-//The enity types name is AdminService.my_bookshop_OrderItems
+//The enity types name is OrdersService.my_bookshop_OrderItems
 //The annotations below are not generated in edmx WHY?
-annotate AdminService.OrderItems with @(
+annotate OrdersService.OrderItems with @(
 	UI: {
 		HeaderInfo: {
 			TypeName: 'Order Item', TypeNamePlural: '	',

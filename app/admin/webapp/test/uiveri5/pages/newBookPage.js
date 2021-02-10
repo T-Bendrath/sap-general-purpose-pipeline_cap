@@ -12,7 +12,6 @@ module.exports = createPageObjects({
           })
         ).sendKeys(sTitle);
       },
-
       iSelectGenre: function () {
         element(
           by.control({
