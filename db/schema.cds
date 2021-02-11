@@ -2,7 +2,7 @@ namespace sap.capire.bookshop;
 using { Currency, managed, cuid, sap } from '@sap/cds/common';
 
 entity Books : managed {
-  key ID : Integer;
+  key ID : Integer @Core.Computed : true;
   title  : localized String(111);
   descr  : localized String(1111);
   author : Association to Authors;
