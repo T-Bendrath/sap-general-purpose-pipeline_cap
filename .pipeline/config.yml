@@ -21,7 +21,7 @@ steps:
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'cfCredentialsId'
-      org: 'cf-dts-inner-source'
+      org: 'cf-dts-integration-de'
       space: 'openSAP'
 
 ### Stage-specific configuration
