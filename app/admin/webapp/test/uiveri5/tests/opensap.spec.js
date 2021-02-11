@@ -1,5 +1,5 @@
-require("./pages/manageBooksPage");
-require("./pages/newBookPage");
+require("../pages/manageBooksPage");
+require("../pages/newBookPage");
 
 describe("opensap", function () {
   let bookTitle = "How to cook Pancakes";
