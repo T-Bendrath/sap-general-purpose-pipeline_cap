@@ -3,7 +3,7 @@ void call(Map params) {
     echo "Current stage config: ${params.config}"
     params.originalStage()  // Execute original stage
 
-    dockerExecute(dockerImage: 'node:8-stretch'){
+    dockerExecute(dockerImage: 'node:lts-stretch'){
         sh """
             npm install @sap/cds --global --quiet
             npm install @sap/cds-dk --global --quiet
@@ -16,7 +16,7 @@ void call(Map params) {
     uiVeri5ExecuteTests script: this,
     runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
     // installCommand: "npm install @sap/cds --global --quiet && NPM_CONFIG_PREFIX=/home/node/.npm-global npm install @sap/cds-dk --global --quiet --force && NPM_CONFIG_PREFIX=/home/node/.npm-global npm install @ui5/uiveri5 --global --quiet && npm install --force && (/home/node/.npm-global/lib/node_modules/@sap/cds/bin/cds.js watch > cds.log 2>&1 &)"
-    // runCommand: "sleep 10 && cd /var/jenkins_home/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/ && /home/node/.npm-global/lib/node_modules/@ui5/uiveri5/bin/uiveri5 --seleniumAddress='http://selenium:4444/wd/hub' --baseUrl='http://npm:4004/fiori.html#manage-books' -v"
+    // runCommand: "sleep 10 && cd /home/jenkins/agent/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/ && /home/node/.npm-global/lib/node_modules/@ui5/uiveri5/bin/uiveri5 --seleniumAddress='http://selenium:4444/wd/hub' --baseUrl='http://npm:4004/fiori.html#manage-books' -v"
     
     // HTML Publisher plugin
     // Publish HTML reports
@@ -25,7 +25,7 @@ void call(Map params) {
         allowMissing: true,
         alwaysLinkToLastBuild: true,
         keepAll: true,
-        reportDir: '/var/jenkins_home/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/target/report/screenshots',
+        reportDir: '/home/jenkins/agent/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/target/report/screenshots',
         reportFiles: "report.html",
         reportName: "UIVeri5 Test Report"
     ]
