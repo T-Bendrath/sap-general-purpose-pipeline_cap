@@ -22,7 +22,7 @@ steps:
     cloudFoundry:
       credentialsId: 'cfCredentialsId'
       org: 'cf-dts-inner-source'
-      space: 'dev'
+      space: 'openSAP'
 
 ### Stage-specific configuration
 stages:
