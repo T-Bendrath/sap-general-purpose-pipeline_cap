@@ -16,7 +16,7 @@ void call(Map params) {
     // Setup the environment to start the application with CAP server
     // and execute UiVeri5 system tests
     uiVeri5ExecuteTests script: this,
-    runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
+    runOptions: ["/var/jenkins_home/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/conf.js"]
     // installCommand: "npm install @sap/cds --global --quiet && NPM_CONFIG_PREFIX=/home/node/.npm-global npm install @sap/cds-dk --global --quiet --force && NPM_CONFIG_PREFIX=/home/node/.npm-global npm install @ui5/uiveri5 --global --quiet && npm install --force && (/home/node/.npm-global/lib/node_modules/@sap/cds/bin/cds.js watch > cds.log 2>&1 &)"
     // runCommand: "cd /var/jenkins_home/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/ && uiveri5"
     
