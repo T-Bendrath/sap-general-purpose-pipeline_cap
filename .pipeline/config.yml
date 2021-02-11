@@ -50,6 +50,9 @@ stages:
   'Central Build':
     buildTool: 'mta'
 
+  # 'Acceptance':
+  #   uiVeri5ExecuteTests:
+
   'Confirm':
     manualConfirmation: false
 
