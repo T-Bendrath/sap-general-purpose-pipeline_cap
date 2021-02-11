@@ -1,13 +1,3 @@
-###
-# This file configures the project "Piper" pipeline of your project.
-# For a reference of the configuration concept and available options, please have a look into its documentation.
-#
-# The documentation for the most recent pipeline version can always be found at:
-#    https://sap.github.io/jenkins-library/
-#
-# This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
-###
-
 ### General project setup
 general:
   productiveBranch: 'main'
@@ -24,16 +14,13 @@ steps:
   handlePipelineStepErrors:
     failOnError: true
 
-  # mavenExecute:
-  #   dockerImage: devxci/mbtci:1.0.14
-
   artifactSetVersion:
     gitPushMode: 'NONE'
     commitVersion: false
 
-  # mtaBuild:
-  #   buildTarget: 'CF'
-  #   mtaBuildTool: 'cloudMbt'
+  uiVeri5ExecuteTests:
+    installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
+    # runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./conf.js"]
 
   # cloudFoundryDeploy:
   #   cloudFoundry:
@@ -50,8 +37,8 @@ stages:
   'Central Build':
     buildTool: 'mta'
 
-  # 'Acceptance':
-  #   uiVeri5ExecuteTests:
+  'Acceptance':
+    uiVeri5ExecuteTests: true
 
   'Confirm':
     manualConfirmation: false
