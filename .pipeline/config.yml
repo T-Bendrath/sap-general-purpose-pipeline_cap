@@ -16,13 +16,13 @@ steps:
 
   # uiVeri5ExecuteTests:
     # installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
-    # runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./conf.js"]
+    # runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
 
-  cloudFoundryDeploy:
-    cloudFoundry:
-      credentialsId: 'cfCredentialsId'
-      org: 'cf-dts-integration-de'
-      space: 'openSAP'
+  # cloudFoundryDeploy:
+  #   cloudFoundry:
+  #     credentialsId: 'cfCredentialsId'
+  #     org: 'cf-dts-integration-de'
+  #     space: 'openSAP'
 
 ### Stage-specific configuration
 stages:
@@ -33,11 +33,12 @@ stages:
   'Central Build':
     buildTool: 'mta'
 
-  # 'Acceptance':
+  'Acceptance':
+    active: true
   #   uiVeri5ExecuteTests: true
 
   'Confirm':
     manualConfirmation: false
 
-  'Release':
-    cloudFoundryDeploy: true
+  # 'Release':
+  #   cloudFoundryDeploy: true
