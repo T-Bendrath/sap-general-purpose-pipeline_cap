@@ -1,12 +1,8 @@
 ### General project setup
 general:
   productiveBranch: 'main'
-  buildTool: 'mta'
-  # inferBuildTool: true
-
+  # buildTool: 'mta'
   gitSshKeyCredentialsId: githubCredentialsId
-
-  # enable only to debug errors, produces too many logs
   verbose: true
 
 ### Step-specific configuration
@@ -18,21 +14,21 @@ steps:
     gitPushMode: 'NONE'
     commitVersion: false
 
-  uiVeri5ExecuteTests:
-    installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
+  # uiVeri5ExecuteTests:
+    # installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
     # runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./conf.js"]
 
-  # cloudFoundryDeploy:
-  #   cloudFoundry:
-  #     credentialsId: 'cfCredentialsId'
-  #     org: 'cf-dts-inner-source'
-  #     space: 'dev'
+  cloudFoundryDeploy:
+    cloudFoundry:
+      credentialsId: 'cfCredentialsId'
+      org: 'cf-dts-inner-source'
+      space: 'dev'
 
 ### Stage-specific configuration
 stages:
-  'Pull-Request Voting':
-    useCloudMbt: true
-    failOnError: true
+  # 'Pull-Request Voting':
+  #   useCloudMbt: true
+  #   failOnError: true
 
   'Central Build':
     buildTool: 'mta'
@@ -44,7 +40,4 @@ stages:
     manualConfirmation: false
 
   'Release':
-    cloudFoundry:
-      credentialsId: 'cfCredentialsId'
-      org: 'cf-dts-inner-source'
-      space: 'dev'
+    cloudFoundryDeploy: true
