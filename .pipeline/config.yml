@@ -1,7 +1,7 @@
 ### General project setup
 general:
   productiveBranch: 'main'
-  # buildTool: 'mta'
+  buildTool: 'mta'
   gitSshKeyCredentialsId: githubCredentialsId
   verbose: true
 
