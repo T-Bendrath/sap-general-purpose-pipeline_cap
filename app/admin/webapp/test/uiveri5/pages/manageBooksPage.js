@@ -8,25 +8,6 @@ module.exports = createPageObjects({
               "admin::BooksList--fe::table::Books::LineItem::StandardAction::Create",
           })
         ).click();
-      },
-      iEnterBookId: function (sBookId) {
-        element(
-          by.control({
-            id:
-              "CreateDialog::Books::ID-inner",
-            interaction: {
-              idSuffix: "inner",
-            },
-          })
-        ).sendKeys(sBookId);
-      },
-      iClickOnCreateInDialog: function () {
-        element(
-          by.control({
-            id:
-              "__button39",
-          })
-        ).click();
       }
     },
 
@@ -34,7 +15,7 @@ module.exports = createPageObjects({
       theBookListContains: function (sBook) {
         var book = element(
           by.control({
-            controlType: "sap.m.Label",
+            controlType: "sap.m.Text",
             viewName: "sap.fe.templates.ListReport.ListReport",
             properties: {
               text: sBook,
