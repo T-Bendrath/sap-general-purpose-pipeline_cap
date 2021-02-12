@@ -13,7 +13,9 @@
 
 node {
     stage("System tests") {
-        git url: scm.userRemoteConfigs[0].url, branch: scm.branches[0].toString().substring(2, scm.branches[0].toString().length())
+        git credentialsId: 'githubCredentialsId',
+            url: scm.userRemoteConfigs[0].url,
+            branch: scm.branches[0].toString().substring(2, scm.branches[0].toString().length())
            
         // Setup the environment to start the application with CAP server
         // and execute UiVeri5 system tests
