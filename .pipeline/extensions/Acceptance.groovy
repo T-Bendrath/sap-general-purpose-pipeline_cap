@@ -3,17 +3,16 @@ void call(Map params) {
     echo "Current stage config: ${params.config}"
     // params.originalStage()  // Execute original stage
 
-            // npm install @sap/cds --global --quiet
-            // npm install @sap/cds-dk --global --quiet --force
-    /* dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
-        sh """
-            cds watch
-        """
-    } */
-
-    echo "Finished UIVeri5Test preparation"
-
     try {
+        // npm install @sap/cds --global --quiet
+        // npm install @sap/cds-dk --global --quiet --force
+        dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
+            sh """
+                cds watch
+            """
+        }
+
+        echo "Finished UIVeri5Test preparation"
 
         // Setup the environment to start the application with CAP server and execute UIVeri5 system tests
         uiVeri5ExecuteTests script: this,
