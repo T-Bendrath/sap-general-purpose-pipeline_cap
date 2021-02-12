@@ -32,7 +32,7 @@ piperPipeline script: this
             allowMissing: true,
             alwaysLinkToLastBuild: true,
             keepAll: true,
-            reportDir: '/var/jenkins_home/workspace/${JOB_NAME}/app/admin/webapp/test/uiveri5/target/report/screenshots',
+            reportDir: './app/admin/webapp/test/uiveri5/target/report/screenshots',
             reportFiles: "report.html",
             reportName: "UIVeri5 Test Report"
         ]

@@ -1,6 +1,11 @@
 void call(Map params) {
     echo "Start - Extension for stage: ${params.stageName}"
     echo "Current stage config: ${params.config}"
+
+    git credentialsId: 'githubCredentialsId',
+        url: scm.userRemoteConfigs[0].url,
+        branch: 'main'
+
     // params.originalStage()  // Execute original stage
 
             // npm install @sap/cds --global --quiet
@@ -29,7 +34,7 @@ void call(Map params) {
         allowMissing: true,
         alwaysLinkToLastBuild: true,
         keepAll: true,
-        reportDir: "/home/jenkins/agent/workspace/openSAP-CAP-Pipeline_main/app/admin/webapp/test/uiveri5/target/report/screenshots",
+        reportDir: "./app/admin/webapp/test/uiveri5/target/report/screenshots",
         reportFiles: "report.html",
         reportName: "UIVeri5 Test Report"
     ]
