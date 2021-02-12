@@ -19,6 +19,15 @@ piperPipeline script: this
             //branch: scm.branches[0].toString().substring(2, scm.branches[0].toString().length())
            
         try {
+            dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
+                sh """
+                    npm install @sap/cds --global --quiet
+                    npm install @sap/cds-dk --global --quiet --force
+                    npm install --force
+                    cds watch
+                """
+            }
+
             // Setup the environment to start the application with CAP server and execute UIVeri5 system tests
             uiVeri5ExecuteTests script: this,
                 runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]

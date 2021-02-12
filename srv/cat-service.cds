@@ -10,5 +10,5 @@ service CatalogService {
   @insertonly entity Orders as projection on my.Orders;
 
   @requires_: 'authenticated-user'
-  action submitOrder (book : Books.ID, amount: Integer);
+  action submitOrder (book: Books.ID, amount: Integer);
 }

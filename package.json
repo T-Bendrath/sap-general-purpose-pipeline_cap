@@ -5,25 +5,20 @@
   "license": "SAP SAMPLE CODE LICENSE",
   "dependencies": {
     "@sap/cds": "^4",
-    "express": "^4",
-    "@sap/hana-client": "^2.5.105"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@sap/cds-dk": "^2"
   },
   "scripts": {
     "genres": "cds serve test/genres.cds",
-    "start": "cds run",
+    "start": "cds run --in-memory?",
     "watch": "cds watch"
   },
   "cds": {
     "requires": {
       "db": {
-        "kind": "sql",
-        "model": [
-          "db",
-          "srv"
-        ]
+        "kind": "sql"
       }
     }
   }
