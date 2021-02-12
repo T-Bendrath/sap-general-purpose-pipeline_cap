@@ -18,11 +18,11 @@ steps:
     # installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
     # runOptions: ["./uiveri5/conf.js"]
 
-  # cloudFoundryDeploy:
-  #   cloudFoundry:
-  #     credentialsId: 'cfCredentialsId'
-  #     org: 'cf-dts-integration-de'
-  #     space: 'openSAP'
+  cloudFoundryDeploy:
+    cloudFoundry:
+      credentialsId: 'cfCredentialsId'
+      org: 'cf-dts-integration-de'
+      space: 'openSAP'
 
 ### Stage-specific configuration
 stages:
@@ -41,5 +41,5 @@ stages:
   'Confirm':
     manualConfirmation: false
 
-  # 'Release':
-  #   cloudFoundryDeploy: true
+  'Release':
+    cloudFoundryDeploy: true

@@ -4,9 +4,9 @@ void call(Map params) {
     // params.originalStage()  // Execute original stage
 
     try {
-                // npm i sqlite3@5.0.0 -g --unsafe-perm
-                // cds serve all --with-mocks --in-memory?
-        dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
+        // npm i sqlite3@5.0.0 -g --unsafe-perm
+        // cds serve all --with-mocks --in-memory?
+        /* dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
             sh """
                 npm i express@4.17.1 --quiet
                 npm i @sap/cds@4.5.1 --quiet
@@ -14,7 +14,7 @@ void call(Map params) {
                 cds build
                 cds watch
             """
-        }
+        } */
 
         echo "Finished UIVeri5Test preparation"
 
