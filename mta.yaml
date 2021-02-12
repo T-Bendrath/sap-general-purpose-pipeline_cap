@@ -25,12 +25,9 @@ modules:
    path: gen/srv
    properties:
      EXIT: 1  # required by deploy.js task to terminate 
-
-   
    requires:
     #### Resources extracted from CAP configuration ####
     - name: capire-bookshop-db
-
    provides:
     - name: srv-binding    # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -40,11 +37,10 @@ modules:
 
  ##############    SIDECAR MODULE   #########################
  - name: db
-    
    type: hdb
    path: gen/db  
    parameters:
-     app-name: capire-bookshop-db  
+     app-name: capire-bookshop-db
    requires:
     #### Hana and xsuaa resources extracted from CAP configuration ####
     - name: capire-bookshop-db
@@ -57,8 +53,9 @@ resources:
  ##### 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
  - name: capire-bookshop-db
    type: com.sap.xs.hdi-container 
-   
    parameters:
+      service: hana  # or 'hanatrial' on trial landscapes
+      service-plan: hdi-shared
    properties:
      hdi-service-name: ${service-name}   # required for Java case
 ############################################################
