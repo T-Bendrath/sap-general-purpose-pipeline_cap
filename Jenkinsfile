@@ -9,9 +9,9 @@
 
 @Library('piper-lib-os') _
 
-// piperPipeline script: this
+piperPipeline script: this
 
-node {
+/* node {
     stage("System tests") {
         git credentialsId: 'githubCredentialsId',
             url: scm.userRemoteConfigs[0].url,
@@ -37,4 +37,4 @@ node {
             reportName: "UIVeri5 Test Report"
         ]
     }
-}
+} */
