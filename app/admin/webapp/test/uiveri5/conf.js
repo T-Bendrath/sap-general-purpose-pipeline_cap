@@ -4,6 +4,6 @@ const specs = path.relative(process.cwd(), path.join(__dirname, './tests/*.spec.
 
 exports.config = {
   profile: "integration",
-  baseUrl: "http://localhost:4004/fiori.html#manage-books",
+  baseUrl: "https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books",
   specs: specs
 };

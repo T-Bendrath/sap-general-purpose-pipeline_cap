@@ -21,7 +21,6 @@ modules:
     requires:
       - name: capire-bookshop-db
       - name: capire-bookshop-uaa
-      # - name: capire-bookshop-dest
     provides:
       - name: srv_api     # required by consumers of CAP services (e.g. approuter)
         properties:
@@ -38,24 +37,6 @@ modules:
       # 'hana' and 'xsuaa' resources extracted from CAP configuration
       - name: capire-bookshop-db
 
-  # - name: ui
-  #   type: html5
-  #   path: app
-  #   build-parameters:
-  #     builder: custom
-  #     commands:
-  #       - npm --prefix .. run build:ui
-  #   requires:
-  #     - name: capire-bookshop-uaa
-  #     - name: capire-bookshop-dest
-  #     - name: srv_api
-  #       group: destinations
-  #       properties:
-  #         forwardAuthToken: true
-  #         strictSSL: false
-  #         name: srv_api
-  #         url: ~{srv-url}
-
   # --------------------- APPROUTER MODULE ---------------------
   - name: capire-bookshop-approuter
   # ------------------------------------------------------------
@@ -67,14 +48,9 @@ modules:
       - name: srv_api
         group: destinations
         properties:
-          # strictSSL: true
           forwardAuthToken: true
           name: srv_api
           url: ~{srv-url}
-    # provides:
-    #   - name: app-url
-    #     properties:
-    #       url: '${default-url}'
 
 resources:
   # ------------------------------------------------------------
