@@ -1,64 +1,37 @@
-####### Generated mta.yaml based on template version 0.2.0
-####### appName = capire-bookshop
-####### language=nodejs; multiTenant=
-####### approuter=
-
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: sap.capire-bookshop
-version: 1.0.0
-description: "A simple bookshop application, build in a self-contained all-in-one fashion, i.e. w/o reusing other packages."
-
 build-parameters:
   before-all:
-   - builder: custom
-     commands:
-      - npm install
-      - cds build/all
-
-parameters:
-  enable-parallel-deployments: true  
-
+  - builder: custom
+    commands:
+    - npm install
+    - cds build/all
+description: A simple bookshop application, build in a self-contained all-in-one fashion, i.e. w/o reusing other packages.
 modules:
- ##############    SERVER MODULE   ##########################
- - name: capire-bookshop-srv
-   type: nodejs
-   path: gen/srv
-   properties:
-     EXIT: 1  # required by deploy.js task to terminate 
-
-   
-   requires:
-    #### Resources extracted from CAP configuration ####
-    - name: capire-bookshop-db
-
-   provides:
-    - name: srv-binding    # required by consumers of CAP services (e.g. approuter)
-      properties:
-        srv-url: ${default-url}
-
- ############################################################
-
- ##############    SIDECAR MODULE   #########################
- - name: db
-    
-   type: hdb
-   path: gen/db  
-   parameters:
-     app-name: capire-bookshop-db  
-   requires:
-    #### Hana and xsuaa resources extracted from CAP configuration ####
-    - name: capire-bookshop-db
- ############################################################
-
-
-##############  RESOURCES  ##################################
+- name: capire-bookshop-srv
+  path: gen/srv
+  properties:
+    EXIT: 1
+  provides:
+  - name: srv-binding
+    properties:
+      srv-url: ${default-url}
+  requires:
+  - name: capire-bookshop-db
+  type: nodejs
+- name: db
+  parameters:
+    app-name: capire-bookshop-db
+  path: gen/db
+  requires:
+  - name: capire-bookshop-db
+  type: hdb
+parameters:
+  enable-parallel-deployments: true
 resources:
- ##### Services extracted from CAP configuration  ####
- ##### 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
- - name: capire-bookshop-db
-   type: com.sap.xs.hdi-container 
-   
-   parameters:
-   properties:
-     hdi-service-name: ${service-name}   # required for Java case
-############################################################
+- name: capire-bookshop-db
+  parameters: null
+  properties:
+    hdi-service-name: ${service-name}
+  type: com.sap.xs.hdi-container
+version: 1.0.0-20210212101419+b1de1a1b7f625aacb69dd021780400600ac5e806
