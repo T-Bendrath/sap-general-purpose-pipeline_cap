@@ -8,6 +8,8 @@ void call(Map params) {
             sh """
                 npm install @sap/cds --global --quiet
                 npm install @sap/cds-dk --global --quiet --force
+                npm install sqlite3 --save-dev --quiet --force
+                npm install --force
                 cds watch
             """
         }
