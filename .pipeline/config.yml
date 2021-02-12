@@ -14,8 +14,8 @@ steps:
     gitPushMode: 'NONE'
     commitVersion: false
 
-  uiVeri5ExecuteTests:
-    runOptions: ["/app/admin/webapp/test/uiveri5/conf.js"]
+  # uiVeri5ExecuteTests:
+  #   runOptions: ["/app/admin/webapp/test/uiveri5/conf.js"]
 
   cloudFoundryDeploy:
     cloudFoundry:
