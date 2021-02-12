@@ -16,7 +16,7 @@ steps:
 
   uiVeri5ExecuteTests:
     # installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
-    runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
+    runOptions: ["./uiveri5/conf.js"]
 
   # cloudFoundryDeploy:
   #   cloudFoundry:
