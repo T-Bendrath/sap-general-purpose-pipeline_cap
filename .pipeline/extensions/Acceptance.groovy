@@ -1,7 +1,7 @@
 void call(Map params) {
     echo "Start - Extension for stage: ${params.stageName}"
     echo "Current stage config: ${params.config}"
-    params.originalStage()  // Execute original stage
+    // params.originalStage()  // Execute original stage
 
             // npm install @sap/cds --global --quiet
             // npm install @sap/cds-dk --global --quiet --force
