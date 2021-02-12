@@ -9,15 +9,15 @@
     "express": "^4.17.1",
     "sqlite3": "5.0.0"
   },
+  "devDependencies": {
+    "@sap/cds-dk": "^3.4.0"
+  },
   "scripts": {
     "start": "cds run"
   },
   "cds": {
     "hana": {
       "syntax": "hdi"
-    },
-    "odata": {
-      "version": "v4"
     },
     "requires": {
       "db": {
@@ -35,8 +35,5 @@
         }
       }
     }
-  },
-  "devDependencies": {
-    "@sap/cds-dk": "^3.4.0"
-  }
+  }  
 }
