@@ -14,9 +14,9 @@ steps:
     gitPushMode: 'NONE'
     commitVersion: false
 
-  # uiVeri5ExecuteTests:
+  uiVeri5ExecuteTests:
     # installCommand: "npm install @ui5/uiveri5 --global --quiet && npm install @sap/cds --global --quiet && npm install @sap/cds-dk --global --quiet && cds watch"
-    # runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
+    runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
 
   # cloudFoundryDeploy:
   #   cloudFoundry:
@@ -33,9 +33,10 @@ stages:
   'Central Build':
     buildTool: 'mta'
 
-  # 'Acceptance':
-  #   active: true
-  #   uiVeri5ExecuteTests: true
+  'Acceptance':
+    # active: true
+    cloudFoundryDeploy: false
+    uiVeri5ExecuteTests: true
 
   'Confirm':
     manualConfirmation: false
