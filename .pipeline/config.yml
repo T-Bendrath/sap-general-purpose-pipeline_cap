@@ -16,7 +16,8 @@ steps:
 
   uiVeri5ExecuteTests:
     testServerUrl: https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com
-    runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./conf.js"]
+    # runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./conf.js"]
+    runCommand: "/home/node/.npm-global/bin/uiveri5 --seleniumAddress=http://localhost:4444/wd/hub --base-url=https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books -v"
 
   cloudFoundryDeploy:
     cloudFoundry:
@@ -26,8 +27,8 @@ steps:
 
 ### Stage-specific configuration
 stages:
-  'Central Build':
-    buildTool: 'mta'
+  # 'Central Build':
+  #   buildTool: 'mta'
 
   'Acceptance':
     cloudFoundryDeploy: false
