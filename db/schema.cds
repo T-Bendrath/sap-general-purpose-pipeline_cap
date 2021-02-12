@@ -3,8 +3,8 @@ using { Currency, managed, cuid, sap } from '@sap/cds/common';
 
 entity Books : managed {
   key ID : Integer @Core.Computed : true;
-  title  : localized String(111);
-  descr  : localized String(1111);
+  title  : String(111);
+  descr  : String(1111);
   author : Association to Authors;
   genre  : Association to Genres;
   stock  : Integer;

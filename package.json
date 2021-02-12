@@ -23,17 +23,6 @@
       "db": {
         "kind": "hana"
       }
-    },
-    "[development]": {
-      "requires": {
-        "db": {
-          "kind": "sql",
-          "model": [
-            "db",
-            "srv"
-          ]
-        }
-      }
     }
   }  
 }
