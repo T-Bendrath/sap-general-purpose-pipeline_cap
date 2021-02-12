@@ -5,12 +5,12 @@
   "license": "SAP SAMPLE CODE LICENSE",
   "dependencies": {
     "@sap/cds": "^4",
-    "@sap/hana-client": "^2.5.105",
-    "express": "^4.17.1",
-    "sqlite3": "5.0.0"
+    "@sap/hana-client": "^2.7.21",
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "@sap/cds-dk": "^3.4.0"
+    "@sap/cds-dk": "^3.4.0",
+    "sqlite3": "5.0.0"
   },
   "scripts": {
     "start": "cds run"
