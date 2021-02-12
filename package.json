@@ -19,7 +19,11 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sql"
+        "kind": "sql",
+        "model": [
+          "db",
+          "srv"
+        ]
       }
     }
   }
