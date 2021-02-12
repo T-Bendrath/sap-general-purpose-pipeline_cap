@@ -4,11 +4,11 @@ void call(Map params) {
     // params.originalStage()  // Execute original stage
 
     try {
+                // npm install sqlite3 --save-dev --quiet --force
         dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
             sh """
                 npm install @sap/cds --global --quiet
                 npm install @sap/cds-dk --global --quiet --force
-                npm install sqlite3 --save-dev --quiet --force
                 npm install --force
                 cds watch
             """
