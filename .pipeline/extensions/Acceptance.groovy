@@ -4,13 +4,12 @@ void call(Map params) {
     // params.originalStage()  // Execute original stage
 
     try {
-                // npm install sqlite3 --save-dev --quiet --force
+                // npm i sqlite3@5.0.0 -g --unsafe-perm
         dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
             sh """
-                npm install @sap/cds --global --quiet
-                npm install @sap/cds-dk --global --quiet --force
-                npm install --force
-                cds watch
+                npm i @sap/cds -g --quiet
+                npm i
+                cds serve all --with-mocks --in-memory?
             """
         }
 
