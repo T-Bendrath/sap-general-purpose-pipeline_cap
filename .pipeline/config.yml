@@ -14,8 +14,9 @@ steps:
     gitPushMode: 'NONE'
     commitVersion: false
 
-  # uiVeri5ExecuteTests:
-  #   runOptions: ["/app/admin/webapp/test/uiveri5/conf.js"]
+  uiVeri5ExecuteTests:
+    testServerUrl: https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com
+    runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./conf.js"]
 
   cloudFoundryDeploy:
     cloudFoundry:

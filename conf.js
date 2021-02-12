@@ -1,7 +1,7 @@
 'use strict'
 const path = require('path');
 // const specs = path.relative(process.cwd(), path.join(__dirname, './tests/*.spec.js'));
-const specs = path.relative(process.cwd(), path.join(__dirname, './app/admin/webapp/test/uiveri5/tests/*.spec.js'));
+const specs = path.relative(process.cwd(), path.join(__dirname, '/app/admin/webapp/test/uiveri5/tests/*.spec.js'));
 
 exports.config = {
   profile: "integration",

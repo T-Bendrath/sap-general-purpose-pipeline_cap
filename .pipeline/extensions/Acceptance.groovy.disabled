@@ -33,7 +33,7 @@ void call(Map params) {
             allowMissing: true,
             alwaysLinkToLastBuild: true,
             keepAll: true,
-            reportDir: "./app/admin/webapp/test/uiveri5/target/report/screenshots",
+            reportDir: "./target/report/screenshots",
             reportFiles: "report.html",
             reportName: "UIVeri5 Test Report"
         ]
