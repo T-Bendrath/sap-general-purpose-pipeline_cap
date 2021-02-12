@@ -9,7 +9,8 @@ void call(Map params) {
             sh """
                 npm i @sap/cds -g --quiet
                 npm i express@4.17.1 -g --quiet
-                npm i
+                npm i @sap/cds-dk -g --quiet --unsafe-perm
+                cds build
                 cds serve all --with-mocks --in-memory?
             """
         }

@@ -35,5 +35,8 @@
         }
       }
     }
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^3.4.0"
   }
 }
