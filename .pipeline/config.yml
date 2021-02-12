@@ -27,15 +27,15 @@ steps:
 
 ### Stage-specific configuration
 stages:
-  # 'Central Build':
-  #   buildTool: 'mta'
+  'Central Build':
+    buildExecute : true
 
   'Acceptance':
-    cloudFoundryDeploy: false
+    cloudFoundryDeploy: true
     uiVeri5ExecuteTests: true
 
-  'Confirm':
-    manualConfirmation: false
+  # 'Confirm':
+  #   manualConfirmation: false
 
   'Release':
     cloudFoundryDeploy: true

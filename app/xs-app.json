@@ -7,26 +7,26 @@
 		"cacheControl": "no-cache, no-store, must-revalidate",
 		"target": "$1", 
 		"localDir": "./",
-		"authenticationType": "xsuaa"
+		"authenticationType": "none"
 	  },
 	  {
 		"source": "^/browse/webapp/(.*)$",
 		"localDir": "./",
-		"authenticationType": "xsuaa"
+		"authenticationType": "none"
 	  },
 	  {
 		"source": "^/admin/webapp/(.*)$",
 		"localDir": "./",
-		"authenticationType": "xsuaa"
+		"authenticationType": "none"
 	  },
 	  {
 		"source": "^/orders/webapp/(.*)$",
 		"localDir": "./",
-		"authenticationType": "xsuaa"
+		"authenticationType": "none"
 	  },
 	  {
 		"source": "^/admin/(.*)",
-		"authenticationType": "xsuaa",
+		"authenticationType": "none",
 		"destination": "srv_api"
 	  },
 	  {
