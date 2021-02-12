@@ -6,12 +6,12 @@ void call(Map params) {
     try {
                 // npm i sqlite3@5.0.0 -g --unsafe-perm
                 // npm i @sap/cds@4.5.1 -g --quiet
+                // cds build
                 // cds serve all --with-mocks --in-memory?
         dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
             sh """
                 npm i express@4.17.1 -g --quiet
                 npm i @sap/cds-dk@3.4.0 --quiet --force
-                cds build
                 cds watch
             """
         }
