@@ -8,6 +8,7 @@ void call(Map params) {
         dockerExecute(script: this, dockerImage: 'node:lts-stretch'){
             sh """
                 npm i @sap/cds -g --quiet
+                npm i express@4.17.1 -g --quiet
                 npm i
                 cds serve all --with-mocks --in-memory?
             """
