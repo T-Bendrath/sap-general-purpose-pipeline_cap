@@ -15,7 +15,7 @@ steps:
     commitVersion: false
 
   uiVeri5ExecuteTests:
-    runOptions: ["./app/admin/webapp/test/uiveri5/conf.js"]
+    runOptions: ["/app/admin/webapp/test/uiveri5/conf.js"]
 
   cloudFoundryDeploy:
     cloudFoundry:
@@ -25,16 +25,11 @@ steps:
 
 ### Stage-specific configuration
 stages:
-  # 'Pull-Request Voting':
-  #   useCloudMbt: true
-  #   failOnError: true
-
   'Central Build':
     buildTool: 'mta'
 
   'Acceptance':
-    # active: true
-    # cloudFoundryDeploy: false
+    cloudFoundryDeploy: false
     uiVeri5ExecuteTests: true
 
   'Confirm':
