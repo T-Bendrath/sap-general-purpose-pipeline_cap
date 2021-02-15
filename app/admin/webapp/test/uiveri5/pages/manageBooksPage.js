@@ -5,7 +5,10 @@ module.exports = createPageObjects({
         element(
           by.control({
             id:
-              "admin::BooksList--fe::table::Books::LineItem::StandardAction::Create"
+              "admin::BooksList--fe::table::Books::LineItem::StandardAction::Create",
+            interaction: {
+              idSuffix: "BDI-content"
+            }
           })
         ).click();
       }
