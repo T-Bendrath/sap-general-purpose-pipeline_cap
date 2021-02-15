@@ -16,10 +16,9 @@ module.exports = createPageObjects({
         element(
           by.control({
             id:
-              "admin::BooksDetailsList--fe::FormContainer::FieldGroup::General::FormElement::DataField::genre_ID::Field-inner-vhi",
+              "admin::BooksDetailsList--fe::FormContainer::FieldGroup::General::FormElement::DataField::genre_ID::Field-inner-vhi"
           })
         ).click();
-
         element(
           by.control({
             controlType: "sap.ui.mdc.Field",
@@ -44,10 +43,9 @@ module.exports = createPageObjects({
         element(
           by.control({
             id:
-              "admin::BooksDetailsList--fe::FormContainer::FieldGroup::General::FormElement::DataField::author_ID::Field-inner-vhi",
+              "admin::BooksDetailsList--fe::FormContainer::FieldGroup::General::FormElement::DataField::author_ID::Field-inner-vhi"
           })
         ).click();
-
         element(
           by.control({
             controlType: "sap.m.Text",
@@ -57,7 +55,6 @@ module.exports = createPageObjects({
             },
           })
         ).click();
-
         element(
           by.control({
             id:
@@ -71,14 +68,14 @@ module.exports = createPageObjects({
       iClickOnSaveButton: function () {
         element(
           by.control({
-            id: "admin::BooksDetailsList--fe::FooterBar::StandardAction::Save",
+            id: "admin::BooksDetailsList--fe::FooterBar::StandardAction::Save"
           })
         ).click();
       },
       iNavigateBack: function () {
         element(
           by.control({
-            id: "backBtn",
+            id: "backBtn"
           })
         ).click();
       },
