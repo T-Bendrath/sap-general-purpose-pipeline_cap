@@ -25,6 +25,10 @@ steps:
       org: 'cf-dts-integration-de'
       space: 'openSAP'
 
+  pipelineStashFilesBeforeBuild:
+    stashIncludes:
+      pipelineConfigAndTests: '**/*'
+
 ### Stage-specific configuration
 stages:
   'Central Build':
