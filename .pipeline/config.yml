@@ -15,9 +15,8 @@ steps:
     commitVersion: false
 
   uiVeri5ExecuteTests:
-    runOptions: ["--seleniumAddress=http://selenium:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
+    runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
     # runCommand: "/home/node/.npm-global/bin/uiveri5 --seleniumAddress=http://selenium:4444/wd/hub --base-url=https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books -v"
-    # testServerUrl: https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com
 
   cloudFoundryDeploy:
     cloudFoundry:
@@ -31,11 +30,8 @@ stages:
     buildExecute : true
 
   'Acceptance':
-    cloudFoundryDeploy: true
+    # cloudFoundryDeploy: true
     uiVeri5ExecuteTests: true
 
-  # 'Confirm':
-  #   manualConfirmation: false
-
-  'Release':
-    cloudFoundryDeploy: true
+  # 'Release':
+  #   cloudFoundryDeploy: true
