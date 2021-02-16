@@ -3,7 +3,7 @@ void call(Map params) {
     echo "Current stage config: ${params.config}"
 
     try {
-        git credentialsId: githubCredentialsId,
+        git credentialsId: 'githubCredentialsId',
             url: 'git@github.com:T-Bendrath/openSAP-CAP-Pipeline.git',
             branch: 'main'
 
