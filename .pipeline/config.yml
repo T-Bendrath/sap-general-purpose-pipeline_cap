@@ -16,6 +16,7 @@ steps:
 
   uiVeri5ExecuteTests:
     runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "-v", "./app/admin/webapp/test/uiveri5/conf.js"]
+    sidecarImage: "docker.wdf.sap.corp:50000/selenium/standalone-chrome"
     # runCommand: "/home/node/.npm-global/bin/uiveri5 --seleniumAddress=http://selenium:4444/wd/hub --base-url=https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books -v"
 
   cloudFoundryDeploy:
