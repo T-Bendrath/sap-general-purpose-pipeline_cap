@@ -16,7 +16,6 @@ steps:
 
   uiVeri5ExecuteTests:
     runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
-    # sidecarImage: "docker.wdf.sap.corp:50000/selenium/standalone-chrome"
 
   cloudFoundryDeploy:
     cloudFoundry:
@@ -24,18 +23,10 @@ steps:
       org: 'cf-dts-integration-de'
       space: 'openSAP'
 
-  # pipelineStashFilesBeforeBuild:
-  #   stashIncludes:
-  #     pipelineConfigAndTests: '**/*'
-
 ### Stage-specific configuration
 stages:
   'Central Build':
     buildExecute : true
-
-  # 'Acceptance':
-  #   cloudFoundryDeploy: false
-  #   uiVeri5ExecuteTests: false
 
   'Confirm':
     manualConfirmation: false
