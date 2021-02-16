@@ -4,10 +4,10 @@ void call(Map params) {
 
     try {
         // Setup the environment to start the application with CAP server and execute UIVeri5 system tests
-        
+
         git credentialsId: 'githubCredentialsId',
-            url: 'git@github.com:T-Bendrath/openSAP-CAP-Pipeline.git',
-            branch: 'main'
+            url: scm.userRemoteConfigs[0].url,
+            branch: scm.branches[0].toString().substring(2, scm.branches[0].toString().length())
 
         uiVeri5ExecuteTests script: this
         
