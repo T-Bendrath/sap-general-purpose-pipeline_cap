@@ -30,7 +30,7 @@ stages:
     buildExecute : true
 
   'Acceptance':
-    # cloudFoundryDeploy: true
+    cloudFoundryDeploy: false
     uiVeri5ExecuteTests: true
 
   # 'Release':
