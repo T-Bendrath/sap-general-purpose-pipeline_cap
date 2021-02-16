@@ -15,8 +15,8 @@ steps:
     commitVersion: false
 
   uiVeri5ExecuteTests:
-    runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "-v", "./app/admin/webapp/test/uiveri5/conf.js"]
-    sidecarImage: "docker.wdf.sap.corp:50000/selenium/standalone-chrome"
+    runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
+    # sidecarImage: "docker.wdf.sap.corp:50000/selenium/standalone-chrome"
 
   cloudFoundryDeploy:
     cloudFoundry:
