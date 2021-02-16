@@ -30,9 +30,9 @@ stages:
   'Central Build':
     buildExecute : true
 
-  'Acceptance':
-    cloudFoundryDeploy: false
-    uiVeri5ExecuteTests: true
+  # 'Acceptance':
+  #   cloudFoundryDeploy: false
+  #   uiVeri5ExecuteTests: false
 
   # 'Release':
   #   cloudFoundryDeploy: true
