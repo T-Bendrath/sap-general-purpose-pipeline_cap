@@ -18,6 +18,9 @@ modules:
   # ------------------------------------------------------------
     type: nodejs
     path: gen/srv
+    parameters:
+      memory: 512M
+      disk-quota: 512M
     requires:
       - name: capire-bookshop-db
       - name: capire-bookshop-uaa
@@ -33,6 +36,8 @@ modules:
     path: gen/db  
     parameters:
       buildpack: nodejs_buildpack
+      memory: 256M
+      disk-quota: 256M
     requires:
       # 'hana' and 'xsuaa' resources extracted from CAP configuration
       - name: capire-bookshop-db
@@ -42,6 +47,9 @@ modules:
   # ------------------------------------------------------------
     type: nodejs
     path: app
+    parameters:
+      memory: 512M
+      disk-quota: 512M
     requires:
       - name: capire-bookshop-uaa
       - name: capire-bookshop-dest
@@ -66,7 +74,6 @@ resources:
   # ------------------------------------------------------------
   - name: capire-bookshop-uaa
   # ------------------------------------------------------------
-    # type: com.sap.xs.uaa
     type: org.cloudfoundry.managed-service
     parameters:
       service: xsuaa
