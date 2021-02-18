@@ -8,13 +8,9 @@ void call(Map params) {
     try {
 
         // Clone the git repository and execute UIVeri5 tests
-        // git credentialsId: "githubCredentialsId",
-        //     url: scm.userRemoteConfigs[0].url,
-        //     branch: "main"
-
-        git credentialsId: params.script.commonPipelineEnvironment.gitSshKeyCredentialsId,
+        git credentialsId: "githubCredentialsId",
             url: scm.userRemoteConfigs[0].url,
-            branch: params.script.commonPipelineEnvironment.gitBranch
+            branch: "main"
 
         uiVeri5ExecuteTests script: this
         
