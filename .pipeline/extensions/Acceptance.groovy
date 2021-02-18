@@ -10,7 +10,6 @@ void call(Map params) {
         // Clone the git repository and execute UIVeri5 tests
         git url: scm.userRemoteConfigs[0].url,
             credentialsId: "githubCredentialsId"
-            // ,branch: "main"
 
         uiVeri5ExecuteTests script: this
         
