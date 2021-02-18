@@ -13,7 +13,9 @@ void call(Map params) {
             branch: "main"
 
         uiVeri5ExecuteTests script: this
-        
+
+    } finally {
+
         // Publish test report for UIVeri5 on Jenkins
         publishHTML target: [
             allowMissing: true,
@@ -23,8 +25,6 @@ void call(Map params) {
             reportFiles: "report.html",
             reportName: "UIVeri5 Test Report"
         ]
-
-    } finally {
 
         deleteDir()
         echo "End - Extension for stage: ${params.stageName}"
