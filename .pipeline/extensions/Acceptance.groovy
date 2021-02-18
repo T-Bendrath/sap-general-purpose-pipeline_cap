@@ -10,13 +10,11 @@ void call(Map params) {
         // Clone the git repository and execute UIVeri5 tests
         git credentialsId: "githubCredentialsId",
             url: scm.userRemoteConfigs[0].url,
-            branch: "${params.script.commonPipelineEnvironment.gitBranch}"
+            branch: "main"
 
         uiVeri5ExecuteTests script: this
         
         echo "End - UIVeri5 test execution"
-
-    } finally {
 
         // Publish test report for UIVeri5 on Jenkins
         publishHTML target: [
@@ -28,8 +26,9 @@ void call(Map params) {
             reportName: "UIVeri5 Test Report"
         ]
 
-        deleteDir()
+    } finally {
 
+        deleteDir()
         echo "End - Extension for stage: ${params.stageName}"
 
     }
