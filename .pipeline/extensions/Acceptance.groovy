@@ -14,8 +14,6 @@ void call(Map params) {
 
         uiVeri5ExecuteTests script: this
         
-        echo "End - UIVeri5 test execution"
-
         // Publish test report for UIVeri5 on Jenkins
         publishHTML target: [
             allowMissing: true,
