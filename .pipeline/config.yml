@@ -1,6 +1,6 @@
 ### General project setup
 general:
-  gitSshKeyCredentialsId: githubCredentialsId
+  gitSshKeyCredentialsId: 'githubCredentialsId'
   productiveBranch: 'main'
   buildTool: 'mta'
 
