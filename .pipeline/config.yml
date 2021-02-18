@@ -1,7 +1,7 @@
 ### General project setup
 general:
   gitSshKeyCredentialsId: 'githubCredentialsId'
-  productiveBranch: 'main'
+  # productiveBranch: 'main'
   buildTool: 'mta'
 
 ### Step-specific configuration
