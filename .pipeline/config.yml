@@ -3,17 +3,9 @@ general:
   gitSshKeyCredentialsId: githubCredentialsId
   productiveBranch: 'main'
   buildTool: 'mta'
-  # verbose: true
 
 ### Step-specific configuration
 steps:
-  # handlePipelineStepErrors:
-  #   failOnError: true
-
-  # artifactSetVersion:
-  #   gitPushMode: 'NONE'
-  #   commitVersion: false
-
   uiVeri5ExecuteTests:
     runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
 
