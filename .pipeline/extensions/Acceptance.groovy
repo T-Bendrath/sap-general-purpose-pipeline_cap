@@ -8,9 +8,9 @@ void call(Map params) {
     try {
 
         // Clone the git repository and execute UIVeri5 tests
-        git credentialsId: 'githubCredentialsId',
+        git credentialsId: "githubCredentialsId",
             url: scm.userRemoteConfigs[0].url,
-            branch: ${params.script.commonPipelineEnvironment.gitBranch}
+            branch: "${params.script.commonPipelineEnvironment.gitBranch}"
 
         uiVeri5ExecuteTests script: this
         
@@ -31,7 +31,7 @@ void call(Map params) {
         deleteDir()
 
         echo "End - Extension for stage: ${params.stageName}"
-        
+
     }
 }
 return this
