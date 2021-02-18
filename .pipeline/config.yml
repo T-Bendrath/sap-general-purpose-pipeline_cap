@@ -3,12 +3,12 @@ general:
   gitSshKeyCredentialsId: githubCredentialsId
   productiveBranch: 'main'
   buildTool: 'mta'
-  # verbose: true
+  verbose: true
 
 ### Step-specific configuration
 steps:
-  # handlePipelineStepErrors:
-  #   failOnError: true
+  handlePipelineStepErrors:
+    failOnError: true
 
   artifactSetVersion:
     gitPushMode: 'NONE'
