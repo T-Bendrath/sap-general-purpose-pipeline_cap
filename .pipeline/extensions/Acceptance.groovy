@@ -2,11 +2,14 @@ void call(Map params) {
     echo "Start - Extension for stage: ${params.stageName}"
     echo "Current stage config: ${params.config}"
 
+    // Execute original stage as defined in the template
+    // params.originalStage()
+
     try {
         // Setup the environment to start the application with CAP server and execute UIVeri5 system tests
         git credentialsId: 'githubCredentialsId',
             url: scm.userRemoteConfigs[0].url,
-            branch: 'main'
+            branch: ${params.script.commonPipelineEnvironment.gitBranch}
 
         uiVeri5ExecuteTests script: this
         
