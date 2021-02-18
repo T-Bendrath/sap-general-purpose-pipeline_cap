@@ -7,7 +7,7 @@ general:
 ### Step-specific configuration
 steps:
   uiVeri5ExecuteTests:
-    runOptions: ["--seleniumAddress=http://localhost:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
+    runOptions: ["--seleniumAddress=http://selenium:4444/wd/hub", "./app/admin/webapp/test/uiveri5/conf.js"]
 
   cloudFoundryDeploy:
     cloudFoundry:
