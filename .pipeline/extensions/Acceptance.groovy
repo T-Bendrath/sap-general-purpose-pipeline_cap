@@ -6,16 +6,19 @@ void call(Map params) {
     // params.originalStage()
 
     try {
-        // Setup the environment to start the application with CAP server and execute UIVeri5 system tests
+
+        // Clone the git repository and execute UIVeri5 tests
         git credentialsId: 'githubCredentialsId',
             url: scm.userRemoteConfigs[0].url,
             branch: ${params.script.commonPipelineEnvironment.gitBranch}
 
         uiVeri5ExecuteTests script: this
         
-        echo "Finished UIVeri5Test execution"
+        echo "End - UIVeri5 test execution"
+
     } finally {
-        // Publish Test Report for UIVeri5 on Jenkins
+
+        // Publish test report for UIVeri5 on Jenkins
         publishHTML target: [
             allowMissing: true,
             alwaysLinkToLastBuild: true,
@@ -28,6 +31,7 @@ void call(Map params) {
         deleteDir()
 
         echo "End - Extension for stage: ${params.stageName}"
+        
     }
 }
 return this

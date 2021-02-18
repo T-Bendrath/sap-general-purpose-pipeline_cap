@@ -1,14 +1,14 @@
 ### General project setup
 general:
+  gitSshKeyCredentialsId: githubCredentialsId
   productiveBranch: 'main'
   buildTool: 'mta'
-  gitSshKeyCredentialsId: githubCredentialsId
-  verbose: true
+  # verbose: true
 
 ### Step-specific configuration
 steps:
-  handlePipelineStepErrors:
-    failOnError: true
+  # handlePipelineStepErrors:
+  #   failOnError: true
 
   artifactSetVersion:
     gitPushMode: 'NONE'
@@ -20,8 +20,8 @@ steps:
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'cfCredentialsId'
-      org: 'cf-dts-integration-de'
-      space: 'openSAP'
+      org: '<YOUR_ORG>'
+      space: '<YOUR_SPACE>'
 
 ### Stage-specific configuration
 stages:
