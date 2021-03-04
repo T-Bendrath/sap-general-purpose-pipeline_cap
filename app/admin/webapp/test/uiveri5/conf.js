@@ -6,7 +6,7 @@ const specs = path.relative(process.cwd(), path.join(__dirname, './tests/*.spec.
 // const baseUrl = "http://localhost:4004/fiori.html#manage-books";
 
 // Remote testing
-const baseUrl = "https://cf-dts-integration-de-opensap-capire-bookshop-approuter.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books";
+const baseUrl = "https://<YOUR_DEPLOYED_APPROUTER_URL>.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books";
 
 exports.config = {
   profile: "integration",
