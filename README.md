@@ -1,44 +1,74 @@
-# Welcome to SAP Cloud Application Programming model samples
+# openSAP "Efficient DevOps with SAP" sample - Project "Piper" pipeline
 
-Find here the samples for the openSAP course [Building Applications with the SAP Cloud Application Programming Model](https://open.sap.com/courses/cp7).
+Find here the sample for the openSAP course [Efficient DevOps with SAP](https://open.sap.com/courses/devops1), week 3, unit 4 'Demo of Delivery/Deployment Stages of Project "Piper" Pipelines'.
 
-## Notes on the Demo in Week 4 Unit 4
-To add all pipeline specific file to your project, run the following command:
+In this unit it is shown how to set up the Project "Piper" general purpose pipeline for an multi-target application (MTA) that follows SAP's Cloud Application Programming (CAP) model. Furthermore, the following configurations are performed for the pipeline:
+- Build of the MTA
+- Deployment of the MTA on SAP BTP, Cloud Foundry environment
+- Pipeline extension to run UiVeri5 tests and publish the test results in Jenkins.
+
+The pipeline documentation can be found [here](https://www.project-piper.io/stages/introduction/).
+
+## Project Setup
+
+In SAP Business Application Studio or Visual Studio Code, open a terminal.
+Then clone the repo:
+
+```sh
+git clone https://github.com/sap-samples/openSAP-devops-cap-pipeline
+cd openSAP-devops-cap-pipeline
+```
+
+In the `openSAP-devops-cap-pipeline` folder run:
+```sh
+npm install
+```
+
+To start the app on your local machine run:
+```sh
+cds watch
+```
+
+## UIVeri5 Test Configuration
+
+This repository includes a standalone approuter module which provides a single point-of-entry. For the sake of simplicity, no authentication is enabled. Deploy the application to SAP BTP, Cloud Foundry environment and note the URL of the deployed application.<br>
+
+The configuration of the UIVeri5 test is found in `app/admin/webapp/test/uiveri5/conf.js`. By default, the `baseUrl` is set to `localhost`, where the application can be accessed when run locally.
+```sh
+const baseUrl = "http://localhost:4004/fiori.html#manage-books";
+```
+
+You can run the UIVeri5 test locally by executing the following:
+```sh
+cd app/admin/webapp/test/uiveri5
+uiveri5
+```
+
+Please adopt the `baseUrl` variable to your deployed application URL so that the deployed application is used during the test execution.
+```sh
+const baseUrl = "https://<YOUR_DEPLOYED_APPROUTER_URL>.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books";
+```
+
+## Jenkins Setup & Pipeline Configuration
+
+To add all pipeline specific files to your project, run the following command:
 
 ```sh
 cds add pipeline
 ```
 
-Details on how to start your Jenkins in your own environment can be found in the [Operations Guide](https://github.com/SAP/devops-docker-cx-server/blob/master/docs/operations/cx-server-operations-guide.md).
+Details on how to start your Jenkins in your own environment for development purposes can be found in the [Operations Guide](https://github.com/SAP/devops-docker-cx-server/blob/master/docs/operations/cx-server-operations-guide.md).
 
 Please note that other than shown in the video Jenkins now is secured by default with an admin user and password.
 After you have started Jenkins with the command `cx-server start`, you can get the initial password by running `./cx-server initial-credentials`.
 
-The pipeline documentation can be found [here](https://sap.github.io/jenkins-library/pipelines/cloud-sdk/introduction/).
+In Jenkins, create new credentials `cfCredentialsId` (Cloud Foundry user credentials) and `githubCredentialsId` (SSH key-pair: public key in [github](https://github.com/), private key in Jenkins credentials).
 
-## Get Access to SAP Business Application Studio
-The recommended environment for the course is SAP Business Application Studio.  Watch [unit 2 of week 1](https://open.sap.com/courses/cp7/items/51pzQUzbXHr2kdbOmVs6jI) for how to get access.
-
-## Setup
-
-In SAP Business Application Studio, open a terminal.
-Then clone the repo with this specific branch:
-
-```sh
-git clone https://github.com/sap-samples/cloud-cap-samples -b openSAP-week4-unit4
-cd cloud-cap-samples
-```
-
-In the `cloud-cap-samples` folder run:
-```sh
-npm install
-```
+In `.pipeline/config.yaml`, fill the placeholders `<YOUR_ORG>` and `<YOUR_SPACE>` to configure your Cloud Foundry deployment target.
 
 ## Get Support
 
-Check out the cap docs at https://cap.cloud.sap. <br>
-In case you find a bug or need support, please [open an issue in here](https://github.com/SAP-samples/cloud-cap-samples/issues/new).
-
+The samples are provided "as-is". There is no guarantee that raised issues will be answered or addressed in future releases. For more information, visit the [pinboard](https://open.sap.com/courses/devops1/pinboard) section of the openSAP course and ask a question to get support.
 
 ## License
 
