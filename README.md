@@ -49,7 +49,7 @@ Please adopt the `baseUrl` variable to your deployed application URL so that the
 const baseUrl = "https://<YOUR_DEPLOYED_APPROUTER_URL>.cfapps.eu10.hana.ondemand.com/app/fiori.html#manage-books";
 ```
 
-## Jenkins Setup & Pipeline Configuration
+## Jenkins Setup and Pipeline Configuration
 
 To add all pipeline specific files to your project, run the following command:
 
@@ -66,10 +66,14 @@ In Jenkins, create new credentials `cfCredentialsId` (Cloud Foundry user credent
 
 In `.pipeline/config.yaml`, fill the placeholders `<YOUR_ORG>` and `<YOUR_SPACE>` to configure your Cloud Foundry deployment target.
 
-## Get Support
+## How to obtain support
+
+[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug.
 
 The samples are provided "as-is". There is no guarantee that raised issues will be answered or addressed in future releases. For more information, visit the [pinboard](https://open.sap.com/courses/devops1/pinboard) section of the openSAP course and ask a question to get support.
 
+For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
+
 ## License
 
-Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under SAP Sample Code License Agreement, except as noted otherwise in the [LICENSE](/LICENSE) file.
+Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](/LICENSE) file.
