@@ -15,11 +15,11 @@ In SAP Business Application Studio or Visual Studio Code, open a terminal.
 Then clone the repo:
 
 ```sh
-git clone https://github.com/sap-samples/openSAP-devops-cap-pipeline
-cd openSAP-devops-cap-pipeline
+git clone https://github.com/sap-samples/devops-cap-pipeline-openSAP
+cd devops-cap-pipeline-openSAP
 ```
 
-In the `openSAP-devops-cap-pipeline` folder run:
+In the `devops-cap-pipeline-openSAP` folder run:
 ```sh
 npm install
 ```
