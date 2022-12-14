@@ -6,7 +6,7 @@
   "dependencies": {
     "@sap/cds": "^4",
     "@sap/hana-client": "^2.7.21",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "@sap/cds-dk": "^3.4.0",
